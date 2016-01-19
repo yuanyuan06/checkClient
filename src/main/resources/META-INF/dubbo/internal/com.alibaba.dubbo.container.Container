@@ -1,0 +1,2 @@
+registry=com.jumbo.check.RegistryContainer
+jetty=com.jumbo.check.JettyContainer
