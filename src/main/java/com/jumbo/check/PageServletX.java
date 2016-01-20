@@ -40,7 +40,12 @@ public class PageServletX extends HttpServlet {
         String query = req.getQueryString();
         URL url = URL.valueOf(req.getRequestURL().toString() + (query == null || query.length() == 0 ? "" : "?" + query));
         String host = url.getParameter("host");
-        ResourceBundle bundle = ResourceBundle.getBundle("conf/hostConfig");
+        ResourceBundle bundle;
+        try{
+            bundle = ResourceBundle.getBundle("hostConfig");
+        }catch (Exception e){
+            bundle = ResourceBundle.getBundle("conf/hostConfig");
+        }
         String host0 = bundle.getString("host" + host);
 
         List<URL> providers = RegistryContainer.getInstance().getProvidersByHost(host0);
