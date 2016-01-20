@@ -28,6 +28,9 @@ public class PageServletX extends HttpServlet {
     }
 
     /**
+     *
+     * 监控service端服务是否正常
+     * TODO 监控client端的运行运行状态
      * http://localhost:8080/host?host=2
      * @param req
      * @param resp
