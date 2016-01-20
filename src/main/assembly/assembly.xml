@@ -6,7 +6,8 @@
 	<includeBaseDirectory>true</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>${project.build.directory}/check/META-INF/assembly/bin</directory>
+			<!--<directory>${project.build.directory}/check/META-INF/assembly/bin</directory>-->
+			<directory>src/main/assembly/bin</directory>
 			<outputDirectory>bin</outputDirectory>
 			<fileMode>0755</fileMode>
 		</fileSet>

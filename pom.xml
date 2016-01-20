@@ -101,31 +101,6 @@
 
   <build>
     <plugins>
-
-      <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>unpack</id>
-            <phase>package</phase>
-            <goals>
-              <goal>unpack</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>com.jumbo</groupId>
-                  <artifactId>checkService</artifactId>
-                  <version>1.0-SNAPSHOT</version>
-                  <outputDirectory>${project.build.directory}/check</outputDirectory>
-                  <includes>META-INF/assembly/**</includes>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
