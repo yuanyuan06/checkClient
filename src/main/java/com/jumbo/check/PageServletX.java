@@ -50,7 +50,7 @@ public class PageServletX extends HttpServlet {
         }
 
         PrintWriter writer = resp.getWriter();
-        writer.print("have services");
+        writer.print(host0 + ": have services");
         writer.flush();
     }
 }
