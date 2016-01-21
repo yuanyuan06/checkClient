@@ -14,9 +14,9 @@ public class AppTest
     @Test
     public void testClient() throws IOException {
         Socket socket = new Socket();
+//        Socket socket = new Socket("www.baidu.com", 443);
 //        socket.setSoTimeout(1);
         try{
-//            Socket socket = new Socket("www.baidu.com", 443);
             SocketAddress addr = new InetSocketAddress("www.baidu.com", 4431);
             socket.connect(addr, 3000);
             boolean connected = socket.isConnected();
