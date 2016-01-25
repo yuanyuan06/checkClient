@@ -61,7 +61,9 @@ public class PageServletX extends HttpServlet {
         }catch (Exception e){
             bundle = ResourceBundle.getBundle("conf/hostConfig");
         }
-        String host0 = bundle.getString(arr[0] + host);
+
+        String hostKey = query.replace("=", "");
+        String host0 = bundle.getString(hostKey);
 
         if(SERVICE.equals(arr[0])){
             List<URL> providers = RegistryContainer.getInstance().getProvidersByHost(host0);
