@@ -54,7 +54,6 @@ public class PageServletX extends HttpServlet {
         URL url = URL.valueOf(req.getRequestURL().toString() + (query == null || query.length() == 0 ? "" : "?" + query));
 
         String[] arr = query.split("=");
-        String host = url.getParameter(arr[0]);
         ResourceBundle bundle;
         try{
             bundle = ResourceBundle.getBundle("hostConfig");
@@ -70,8 +69,7 @@ public class PageServletX extends HttpServlet {
             if(providers == null || providers.size() < 1){
                 throw  new HttpException(HttpStatus.ORDINAL_404_Not_Found);
             }
-        }else if(WEB.equals(arr[0])){
-            // HTTPCLIENT
+        }else if(WEB.equals(arr[0]) || DEAMO.equals(arr[0])){
             HttpClient httpclient = new DefaultHttpClient();
             HttpGet httpgets = new HttpGet(host0);
             try{
@@ -83,10 +81,6 @@ public class PageServletX extends HttpServlet {
             }catch (Exception e){
                 throw  new HttpException(HttpStatus.ORDINAL_404_Not_Found);
             }
-
-        }else if(DEAMO.equals(arr[0])){
-            // HTTPCLIENT   TODO deamo加页面
-
         }else{
             throw new IllegalArgumentException();
         }
