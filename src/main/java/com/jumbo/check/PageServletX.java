@@ -25,7 +25,7 @@ public class PageServletX extends HttpServlet {
 
     private final static String SERVICE = "service";
     private final static String WEB = "web";
-    private final static String DEAMO = "deamo";
+    private final static String DEAMO = "deamon";
 
     @Override
     public void init() throws ServletException {
@@ -40,7 +40,6 @@ public class PageServletX extends HttpServlet {
     /**
      *
      * 监控service端服务是否正常
-     * TODO 监控client端的运行运行状态
      * http://localhost:8080/host?host=2
      * @param req
      * @param resp
@@ -87,7 +86,7 @@ public class PageServletX extends HttpServlet {
 
 
         PrintWriter writer = resp.getWriter();
-        writer.print(host0 + ": have " + arr[0]);
+        writer.print( arr[0] +  "   "  + host0);
         writer.flush();
     }
 }
